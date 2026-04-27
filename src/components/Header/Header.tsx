@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import Logo from "@/assets/logo.svg";
 import HeaderDate from "./HeaderDate";
+import HeadWheather from "./HeadWheather";
 import LocationDropdown from "./LocationDropdown";
 
 export default function Header() {
@@ -11,6 +12,7 @@ export default function Header() {
       <div className="flex items-center gap-7.5">
         <LocationDropdown />
         <HeaderDate />
+        <HeadWheather />
       </div>
     </div>
   );
