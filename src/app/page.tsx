@@ -1,3 +1,4 @@
+import EventStream from "@/components/EventStream/EventStream";
 import Header from "@/components/Header/Header";
 import SituationPanel from "@/components/SituationPanel/SituationPanel";
 
@@ -6,6 +7,9 @@ export default function Home() {
     <div className="px-12.5">
       <Header />
       <SituationPanel />
+      <div>
+        <EventStream />
+      </div>
     </div>
   );
 }
