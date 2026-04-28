@@ -1,3 +1,5 @@
+import SectionHeader from "../common/SectionHeader";
+
 interface SelectorProps {
   text: string;
 }
@@ -19,7 +21,7 @@ const scenarios = [
 export default function ScenarioSelector() {
   return (
     <section className="flex flex-col gap-3.75">
-      <div className="text-body-medium-bold">시뮬레이션 시나리오 선택</div>
+      <SectionHeader title="시뮬레이션 시나리오 선택" />
       <div className="flex gap-2.5">
         {scenarios.map((scenario) => (
           <Selector text={scenario} key={scenario} />

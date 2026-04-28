@@ -1,3 +1,4 @@
+import SectionHeader from "../common/SectionHeader";
 import StatusView from "../common/StatusView";
 
 type DeviceType = {
@@ -16,7 +17,7 @@ const devices: DeviceType[] = [
 export default function DeviceStatus() {
   return (
     <section className="flex flex-1 flex-col gap-3.75">
-      <div className="text-body-medium-bold">장비 및 IoT 상태</div>
+      <SectionHeader title="장비 및 IoT 상태" />
       <div className="flex gap-3.75">
         {devices.map(({ device, status }) => (
           <StatusView channel={device} status={status} key={device} />
