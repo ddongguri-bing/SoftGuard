@@ -1,7 +1,6 @@
 import { eventStreamData } from "@/types/eventStreamDataItem";
-import Image from "next/image";
 
-import DoubleHeadedArrow from "@/assets/double-headed-arrow.svg";
+import InteractionView from "./common/InteractionView";
 
 interface EventStreamItemProps {
   data: eventStreamData;
@@ -55,16 +54,11 @@ export default function EventStreamItem({ data }: EventStreamItemProps) {
             {isNormal ? (
               <div className="text-body-small-bold">{data.state}</div>
             ) : (
-              <div className="text-body-small-bold flex gap-1.25">
-                <div>{data.object1}</div>
-                <Image
-                  src={DoubleHeadedArrow}
-                  width={24}
-                  height={24}
-                  alt="양방향 화살표"
-                />
-                <div>{data.object2}</div>
-              </div>
+              <InteractionView
+                object1={data.object1}
+                object2={data.object2}
+                size="small"
+              />
             )}
           </div>
           <div className="text-body-small text-white-third">{detailText}</div>
