@@ -38,7 +38,6 @@ export default function InsightCard({
           {rightSlot}
         </div>
       )}
-
       <div className={cn("text-body-small", bodyClassName)}>{children}</div>
     </div>
   );
