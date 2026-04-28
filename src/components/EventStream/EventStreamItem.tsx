@@ -1,6 +1,5 @@
 import { eventStreamData } from "@/types/eventStreamDataItem";
-
-import InteractionView from "./common/InteractionView";
+import InteractionView from "../common/InteractionView";
 
 interface EventStreamItemProps {
   data: eventStreamData;
