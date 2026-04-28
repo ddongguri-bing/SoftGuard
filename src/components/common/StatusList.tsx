@@ -1,9 +1,9 @@
 import { cn } from "@/lib/utils";
-import { StatusType } from "@/types/status";
+import { StatusItemData } from "@/types/status";
 import StatusView from "./StatusView";
 
 interface StatusListProps {
-  items: { label: string; status: StatusType }[];
+  items: StatusItemData[];
   className?: string;
 }
 
