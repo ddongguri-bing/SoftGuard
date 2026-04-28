@@ -5,7 +5,7 @@ import InsightCard from "./InsightCard";
 
 export default function InsightPanel() {
   return (
-    <section className="flex flex-col gap-3.75">
+    <section className="flex flex-4 flex-col gap-3.75">
       <div className="flex items-baseline gap-2.5">
         <div className="text-body-medium-bold">LLM 사건 요약 및 인사이트</div>
         <div className="text-body-xsmall-bold text-theme-light">AI 기반</div>
