@@ -8,7 +8,7 @@ import TimeToCollision from "./TimeToCollision";
 
 export default function SituationPanel() {
   return (
-    <div className="flex items-center justify-between">
+    <section className="flex items-center justify-between">
       <InfoItem title="현재 위험 단계">
         <RiskLevel level="danger" />
       </InfoItem>
@@ -33,6 +33,6 @@ export default function SituationPanel() {
       <InfoItem title="경고 채널 상태" gap="large">
         <AlertChannelStatus />
       </InfoItem>
-    </div>
+    </section>
   );
 }

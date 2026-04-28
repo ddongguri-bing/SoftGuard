@@ -7,7 +7,7 @@ import LocationDropdown from "./LocationDropdown";
 
 export default function Header() {
   return (
-    <div className="flex gap-25 py-7.5">
+    <header className="flex gap-25 py-7.5">
       <Image
         src={Logo}
         width={111}
@@ -21,6 +21,6 @@ export default function Header() {
         <HeaderDate />
         <HeadWheather />
       </div>
-    </div>
+    </header>
   );
 }

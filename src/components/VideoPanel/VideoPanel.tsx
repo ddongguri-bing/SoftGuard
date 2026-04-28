@@ -17,7 +17,7 @@ const MARKER_ITEMS: markerItemType[] = [
 
 export default function VideoPanel() {
   return (
-    <div className="bg-black-third relative flex-1 rounded-[10px]">
+    <section className="bg-black-third relative flex-1 rounded-[10px]">
       <div className="bg-black-second/50 absolute bottom-0 flex h-12.5 w-full gap-3.75 rounded-b-[10px] px-7.5">
         {MARKER_ITEMS.map((item) => (
           <div
@@ -33,6 +33,6 @@ export default function VideoPanel() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
