@@ -1,23 +1,13 @@
-import StatusView from "../common/StatusView";
+import { StatusItemData } from "@/types/status";
+import StatusList from "../common/StatusList";
 
-type AlertChannelType = {
-  channel: string;
-  status: string;
-};
-
-const channels: AlertChannelType[] = [
-  { channel: "LED", status: "danger" },
-  { channel: "스피커", status: "warning" },
-  { channel: "바닥LED", status: "normal" },
-  { channel: "VMS 전광판", status: "normal" },
+const channels: StatusItemData[] = [
+  { label: "LED", status: "danger" },
+  { label: "스피커", status: "warning" },
+  { label: "바닥LED", status: "normal" },
+  { label: "VMS 전광판", status: "normal" },
 ];
 
 export default function AlertChannelStatus() {
-  return (
-    <div className="flex gap-3.75">
-      {channels.map(({ channel, status }) => (
-        <StatusView channel={channel} status={status} key={channel} />
-      ))}
-    </div>
-  );
+  return <StatusList items={channels} />;
 }

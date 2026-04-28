@@ -1,9 +1,11 @@
+import { StatusType } from "@/types/status";
+
 interface StatusViewProps {
-  channel: string;
-  status: string;
+  label: string;
+  status: StatusType;
 }
 
-export default function StatusView({ channel, status }: StatusViewProps) {
+export default function StatusView({ label, status }: StatusViewProps) {
   const statusClass =
     status === "danger"
       ? "bg-error"
@@ -13,7 +15,7 @@ export default function StatusView({ channel, status }: StatusViewProps) {
 
   return (
     <div className="flex items-center gap-2">
-      <div className="text-body-small">{channel}</div>
+      <div className="text-body-small">{label}</div>
       <div className="relative h-2 w-2">
         <div
           className={`text-white-third absolute inset-0 h-2 w-2 rounded-full ${statusClass}`}
