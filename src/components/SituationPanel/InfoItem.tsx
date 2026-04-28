@@ -13,7 +13,7 @@ export default function InfoItem({
     <div
       className={`flex flex-col ${gap === "small" ? "gap-2.5" : "gap-3.75"}`}
     >
-      <div className="text-body-large-bold">{title}</div>
+      <div className="text-body-large-bold text-white-second">{title}</div>
       <div>{children}</div>
     </div>
   );
