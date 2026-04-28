@@ -1,7 +1,5 @@
-// TODO: 전체 레이아웃
-
-import ChartsRow from "./charts/ChartsRow";
-import StatsRow from "./stats/StatsRow";
+import ChartsRow from "./Charts/ChartsRow";
+import StatsRow from "./Stats/StatsRow";
 
 export default function AnalyticsDashboard() {
   return (

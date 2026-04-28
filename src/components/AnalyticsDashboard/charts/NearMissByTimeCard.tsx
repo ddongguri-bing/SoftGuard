@@ -1,5 +1,3 @@
-// TODO : Near-miss 시간대 차트
-
 import BaseChartCard from "./BaseChartCard";
 
 export default function NearMissByTimeCard() {

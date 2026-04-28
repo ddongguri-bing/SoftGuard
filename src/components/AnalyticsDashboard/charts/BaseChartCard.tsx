@@ -1,5 +1,3 @@
-// TODO: 차트 카드 공통 프레임(UI)
-
 interface BaseChartCardProps {
   title: string;
   children: React.ReactElement;

@@ -1,5 +1,3 @@
-// TODO : 일자별 사고 건수 차트
-
 import BaseChartCard from "./BaseChartCard";
 
 export default function IncidentsByDay() {

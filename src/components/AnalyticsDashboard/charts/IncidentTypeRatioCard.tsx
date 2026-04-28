@@ -1,5 +1,3 @@
-// TODO : 사고 유형 비율 차트
-
 import BaseChartCard from "./BaseChartCard";
 
 export default function IncidentTypeRatioCard() {
