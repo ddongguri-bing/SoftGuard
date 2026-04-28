@@ -10,7 +10,7 @@ export default function InsightPanel() {
       <SectionHeader
         title="LLM 사건 요약 및 인사이트"
         label="AI 기반"
-        labelStyle="text-theme-light"
+        labelClassName="text-theme-light"
       />
       <InsightCard
         title="최신 요약"

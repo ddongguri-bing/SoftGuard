@@ -1,22 +1,27 @@
 import { cn } from "@/lib/utils";
+import clsx from "clsx";
 
 interface SectionHeaderProps {
   title: string;
   label?: string;
-  labelStyle?: string;
+  labelClassName?: string;
   className?: string;
 }
 
 export default function SectionHeader({
   title,
   label,
-  labelStyle,
+  labelClassName,
   className,
 }: SectionHeaderProps) {
   return (
     <div className={cn("flex items-baseline gap-2.5", className)}>
       <div className="text-body-medium-bold">{title}</div>
-      <div className={`text-body-xsmall-bold ${labelStyle}`}>{label}</div>
+      {label && (
+        <div className={clsx("text-body-xsmall-bold", labelClassName)}>
+          {label}
+        </div>
+      )}
     </div>
   );
 }

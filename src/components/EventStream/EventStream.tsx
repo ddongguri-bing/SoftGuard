@@ -7,7 +7,7 @@ export default function EventStream() {
       <SectionHeader
         title="Near-miss 이벤트 스트림"
         label="실시간"
-        labelStyle="text-white-third"
+        labelClassName="text-white-third"
         className="mb-2.5"
       />
       <EventStreamItems />
