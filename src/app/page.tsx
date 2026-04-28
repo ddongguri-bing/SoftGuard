@@ -1,5 +1,6 @@
 import EventStream from "@/components/EventStream/EventStream";
 import Header from "@/components/Header/Header";
+import InsightPanel from "@/components/InsightPanel/InsightPanel";
 import SituationPanel from "@/components/SituationPanel/SituationPanel";
 import VideoPanel from "@/components/VideoPanel/VideoPanel";
 
@@ -11,6 +12,9 @@ export default function Home() {
       <div className="flex gap-12.5">
         <VideoPanel />
         <EventStream />
+      </div>
+      <div>
+        <InsightPanel />
       </div>
     </div>
   );
