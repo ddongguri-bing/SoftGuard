@@ -1,14 +1,28 @@
+"use client";
+
+import { cn } from "@/lib/utils";
+import { useState } from "react";
 import SectionHeader from "../common/SectionHeader";
 
 interface SelectorProps {
   text: string;
+  selected: boolean;
+  onClick: () => void;
 }
 
-function Selector({ text }: SelectorProps) {
+function Selector({ text, selected, onClick }: SelectorProps) {
   return (
-    <div className="bg-black-first hover:bg-theme-main text-body-small-bold rounded-[6px] px-3.75 py-2">
+    <button
+      onClick={onClick}
+      className={cn(
+        `text-white-first rounded-[6px] px-3.75 py-2 transition-all`,
+        selected
+          ? "bg-theme-main text-body-small-bold"
+          : "bg-black-first hover:bg-theme-sub hover:text-body-small-bold text-body-small",
+      )}
+    >
       {text}
-    </div>
+    </button>
   );
 }
 
@@ -19,12 +33,19 @@ const scenarios = [
 ];
 
 export default function ScenarioSelector() {
+  const [selectedScenario, setSelectedScenario] = useState(scenarios[0]);
+
   return (
     <section className="flex flex-col gap-2.5">
       <SectionHeader title="시뮬레이션 시나리오 선택" />
       <div className="flex gap-2.5">
         {scenarios.map((scenario) => (
-          <Selector text={scenario} key={scenario} />
+          <Selector
+            text={scenario}
+            selected={selectedScenario === scenario}
+            onClick={() => setSelectedScenario(scenario)}
+            key={scenario}
+          />
         ))}
       </div>
     </section>
