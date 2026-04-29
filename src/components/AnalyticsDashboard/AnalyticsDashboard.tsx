@@ -1,6 +1,6 @@
 import SectionHeader from "../common/SectionHeader";
-import ChartsRow from "./Charts/ChartsRow";
-import StatsRow from "./Stats/StatsRow";
+import ChartsRow from "./charts/ChartsRow";
+import StatsRow from "./stats/StatsRow";
 
 export default function AnalyticsDashboard() {
   return (
