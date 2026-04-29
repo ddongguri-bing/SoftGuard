@@ -6,7 +6,7 @@ interface SelectorProps {
 
 function Selector({ text }: SelectorProps) {
   return (
-    <div className="bg-theme-main text-body-small-bold rounded-[6px] px-3.75 py-2">
+    <div className="bg-black-first hover:bg-theme-main text-body-small-bold rounded-[6px] px-3.75 py-2">
       {text}
     </div>
   );
@@ -20,7 +20,7 @@ const scenarios = [
 
 export default function ScenarioSelector() {
   return (
-    <section className="flex flex-col gap-3.75">
+    <section className="flex flex-col gap-2.5">
       <SectionHeader title="시뮬레이션 시나리오 선택" />
       <div className="flex gap-2.5">
         {scenarios.map((scenario) => (

@@ -6,7 +6,7 @@ import InsightCard from "./InsightCard";
 
 export default function InsightPanel() {
   return (
-    <section className="flex flex-4 flex-col gap-3.75">
+    <section className="flex flex-4 flex-col gap-2.5">
       <SectionHeader
         title="LLM 사건 요약 및 인사이트"
         label="AI 기반"

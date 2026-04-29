@@ -12,7 +12,7 @@ const devices: StatusItemData[] = [
 
 export default function DeviceStatus() {
   return (
-    <section className="flex flex-1 flex-col gap-3.75">
+    <section className="flex flex-1 flex-col gap-2.5">
       <SectionHeader title="장비 및 IoT 상태" />
       <StatusList items={devices} />
     </section>
