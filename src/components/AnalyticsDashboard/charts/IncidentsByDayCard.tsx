@@ -1,8 +1,8 @@
 import BaseChartCard from "./BaseChartCard";
 
-export default function IncidentsByDay() {
+export default function IncidentsByDayCard() {
   return (
-    <BaseChartCard title="요일별 발생 비율">
+    <BaseChartCard title="요일별 발생 건수">
       <div className="bg-black-third text-body-small-bold flex h-30 w-40 items-center justify-center">
         EChart 영역
       </div>

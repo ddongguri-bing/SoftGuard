@@ -1,4 +1,4 @@
-import IncidentsByDay from "./IncidentsByDay";
+import IncidentsByDayCard from "./IncidentsByDayCard";
 import IncidentTypeRatioCard from "./IncidentTypeRatioCard";
 import NearMissByTimeCard from "./NearMissByTimeCard";
 
@@ -7,7 +7,7 @@ export default function ChartsRow() {
     <div className="flex justify-between gap-2.5">
       <NearMissByTimeCard />
       <IncidentTypeRatioCard />
-      <IncidentsByDay />
+      <IncidentsByDayCard />
     </div>
   );
 }
