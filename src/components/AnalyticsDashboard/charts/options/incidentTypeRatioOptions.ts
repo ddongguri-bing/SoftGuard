@@ -32,11 +32,11 @@ export const incidentTypeRatioOptions: EChartsOption = {
       radius: ["20%", "60%"], // 도넛의 안쪽 바깥쪽 반지름
       center: ["35%", "50%"], // 도넛 중심의 x, y 위치
       avoidLabelOverlap: false, // 파이 조각 라벨이 겹치지 않게 자동 조정하는 기능 관련 옵션
-      itemStyle: {
-        borderRadius: 10,
-        borderColor: "#fff",
-        borderWidth: 2,
-      },
+      // itemStyle: {
+      //   borderRadius: 10,
+      //   borderColor: "#fff",
+      //   borderWidth: 2,
+      // },
       label: {
         show: false, // 파이 그래프에 각각이 어떤 아이템인지 라벨링
       },

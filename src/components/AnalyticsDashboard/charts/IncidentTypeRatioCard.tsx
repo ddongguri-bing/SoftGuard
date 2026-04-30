@@ -5,7 +5,7 @@ import { incidentTypeRatioOptions } from "./options/incidentTypeRatioOptions";
 export default function IncidentTypeRatioCard() {
   return (
     <BaseChartCard title="사고 유형 비율">
-      <div className="text-body-small-bold flex w-40 items-center justify-center">
+      <div className="text-body-small-bold flex items-center justify-center">
         <EChartView option={incidentTypeRatioOptions} />
       </div>
     </BaseChartCard>

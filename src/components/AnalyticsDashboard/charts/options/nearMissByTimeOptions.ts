@@ -39,11 +39,11 @@ export const nearMissByTimeOptions: EChartsOption = {
       ],
 
       lineStyle: {
-        color: "#9B5DE0", // 선 색
+        color: "#BB8FEB", // 선 색
         width: 2,
       },
       itemStyle: {
-        color: "#9B5DE0", // 노드 내부 색
+        color: "#BB8FEB", // 노드 내부 색
         borderWidth: 2,
       },
       areaStyle: {

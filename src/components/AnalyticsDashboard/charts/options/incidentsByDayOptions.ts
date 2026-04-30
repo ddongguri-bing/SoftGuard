@@ -20,7 +20,7 @@ export const incidentsByDayOptions: EChartsOption = {
       type: "bar",
       data: [245, 200, 140, 210, 145, 280, 260],
       itemStyle: {
-        color: "#9B5DE0",
+        color: "#BB8FEB",
       },
     },
   ],
