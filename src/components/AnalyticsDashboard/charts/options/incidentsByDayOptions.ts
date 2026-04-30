@@ -1,6 +1,6 @@
 import type { EChartsOption } from "echarts";
 
-export const basicBarOption: EChartsOption = {
+export const incidentsByDayOptions: EChartsOption = {
   tooltip: {
     trigger: "axis",
   },
