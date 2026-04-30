@@ -5,7 +5,7 @@ import { incidentsByDayOptions } from "./options/incidentsByDayOptions";
 export default function IncidentsByDayCard() {
   return (
     <BaseChartCard title="요일별 발생 건수">
-      <div className="text-body-small-bold flex items-center justify-center">
+      <div className="text-body-small-bold flex w-50 items-center justify-center">
         <EChartView option={incidentsByDayOptions} />
       </div>
     </BaseChartCard>

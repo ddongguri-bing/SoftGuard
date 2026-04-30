@@ -22,21 +22,17 @@ export const incidentTypeRatioOptions: EChartsOption = {
   },
   legend: {
     orient: "vertical", // 범례를 세로로 배치 [색깔 - 범례]
-    right: "5%", // 범례를 오른쪽에서 5% 안에 위치
-    top: "middle", // 세로 중앙 정렬
+    bottom: "0%",
+    textStyle: { color: "#FFFFFF" },
   },
+
   series: [
     {
       name: "비율", // 시리즈 이름
       type: "pie",
-      radius: ["20%", "60%"], // 도넛의 안쪽 바깥쪽 반지름
-      center: ["35%", "50%"], // 도넛 중심의 x, y 위치
+      radius: ["15%", "75%"], // 도넛의 안쪽 바깥쪽 반지름
+      center: ["50%", "35%"], // 도넛 중심의 x, y 위치
       avoidLabelOverlap: false, // 파이 조각 라벨이 겹치지 않게 자동 조정하는 기능 관련 옵션
-      // itemStyle: {
-      //   borderRadius: 10,
-      //   borderColor: "#fff",
-      //   borderWidth: 2,
-      // },
       label: {
         show: false, // 파이 그래프에 각각이 어떤 아이템인지 라벨링
       },

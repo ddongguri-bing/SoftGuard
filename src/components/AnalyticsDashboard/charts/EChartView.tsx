@@ -5,14 +5,13 @@ import ReactECharts from "echarts-for-react";
 
 interface EChartProps {
   option: EChartsOption;
-  height?: number | string;
 }
 
-export default function EChartView({ option, height }: EChartProps) {
+export default function EChartView({ option }: EChartProps) {
   return (
     <ReactECharts
       option={option}
-      className={`w-full ${height}`}
+      style={{ width: "100%", height: 280 }}
       notMerge
       lazyUpdate
     />

@@ -9,13 +9,24 @@ export const nearMissByTimeOptions: EChartsOption = {
     min: 0,
     max: 24,
     interval: 4,
-  },
-  axisLabel: {
-    formatter: "{value}", // 눈금에 표시되는 텍스트를 원하는 형태로 바꿔주는 포맷 함수(또는 템플릿 문자열) -> 현재는 기존 표시와 동일
+    axisLine: { lineStyle: { color: "#FFFFFF" } }, // 축선
+    axisTick: { lineStyle: { color: "#D9D9D9" } }, // 눈금
+    axisLabel: { color: "#FFFFFF" }, // 축 라벨
+    splitLine: { show: false }, // x축 구분선(보통 끔)
   },
   yAxis: {
     type: "value",
     interval: 10,
+    axisLine: { lineStyle: { color: "#FFFFFF" } }, // 축선
+    axisTick: { lineStyle: { color: "#D9D9D9" } }, // 눈금
+    axisLabel: { color: "#FFFFFF" }, // 축 라벨
+    splitLine: { show: true }, // x축 구분선(보통 끔)
+  },
+  grid: {
+    top: 30,
+    bottom: 20,
+    left: 0,
+    right: 15,
   },
   series: [
     {
