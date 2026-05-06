@@ -1,5 +1,9 @@
+import Image from "next/image";
+import Link from "next/link";
 import SectionHeader from "../common/SectionHeader";
 import EventStreamItems from "./EventStreamItems";
+
+import ArrowForward from "@/assets/arrow-forward.svg";
 
 export default function EventStream() {
   return (
@@ -8,6 +12,15 @@ export default function EventStream() {
         title="Near-miss 이벤트 스트림"
         label="실시간"
         labelClassName="text-white-third"
+        rightSlot={
+          <Link
+            href={"/eventStream"}
+            className="text-body-xsmall text-white-third flex items-center gap-1.25"
+          >
+            전체보기
+            <Image src={ArrowForward} width={12} height={12} alt="전체보기" />
+          </Link>
+        }
       />
       <EventStreamItems />
     </section>

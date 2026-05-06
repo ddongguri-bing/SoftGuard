@@ -6,6 +6,7 @@ interface SectionHeaderProps {
   label?: string;
   labelClassName?: string;
   className?: string;
+  rightSlot?: React.ReactNode;
 }
 
 export default function SectionHeader({
@@ -13,15 +14,19 @@ export default function SectionHeader({
   label,
   labelClassName,
   className,
+  rightSlot,
 }: SectionHeaderProps) {
   return (
-    <div className={cn("flex items-baseline gap-2.5", className)}>
-      <div className="text-body-medium-bold">{title}</div>
-      {label && (
-        <div className={clsx("text-body-xsmall-bold", labelClassName)}>
-          {label}
-        </div>
-      )}
+    <div className="flex items-center justify-between">
+      <div className={cn("flex items-baseline gap-2.5", className)}>
+        <div className="text-body-medium-bold">{title}</div>
+        {label && (
+          <div className={clsx("text-body-xsmall-bold", labelClassName)}>
+            {label}
+          </div>
+        )}
+      </div>
+      {rightSlot}
     </div>
   );
 }
