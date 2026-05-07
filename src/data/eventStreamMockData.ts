@@ -12,7 +12,7 @@ export const eventStreamMockData: eventStreamData[] = [
     action: "경고 송출",
   },
   {
-    time: "16:03:43",
+    time: "16:02:43",
     level: "warning",
     object1: "이면도로 진입 차량",
     object2: "보행자",
@@ -22,7 +22,7 @@ export const eventStreamMockData: eventStreamData[] = [
     action: "LED 점등",
   },
   {
-    time: "16:03:43",
+    time: "16:01:43",
     level: "warning",
     object1: "이면도로 진입 차량",
     object2: "보행자",
@@ -32,7 +32,7 @@ export const eventStreamMockData: eventStreamData[] = [
     action: "LED 점등",
   },
   {
-    time: "16:03:43",
+    time: "15:59:43",
     level: "warning",
     object1: "이면도로 진입 차량",
     object2: "보행자",
@@ -42,7 +42,7 @@ export const eventStreamMockData: eventStreamData[] = [
     action: "LED 점등",
   },
   {
-    time: "16:03:43",
+    time: "16:58:43",
     level: "warning",
     object1: "이면도로 진입 차량",
     object2: "보행자",
@@ -52,21 +52,21 @@ export const eventStreamMockData: eventStreamData[] = [
     action: "LED 점등",
   },
   {
-    time: "16:03:43",
+    time: "16:57:43",
     level: "normal",
     state: "정상 주행",
     location: "남문 사거리",
     action: "특이사항 없음",
   },
   {
-    time: "16:03:43",
+    time: "16:56:43",
     level: "normal",
     state: "정상 주행",
     location: "남문 사거리",
     action: "특이사항 없음",
   },
   {
-    time: "16:03:43",
+    time: "16:55:43",
     level: "normal",
     state: "정상 주행",
     location: "남문 사거리",
