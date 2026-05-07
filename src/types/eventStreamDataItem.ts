@@ -1,6 +1,7 @@
 type RiskLevel = "danger" | "warning" | "normal";
 
 export interface eventStreamData {
+  id: number;
   time: string;
   level: RiskLevel;
   object1?: string;
