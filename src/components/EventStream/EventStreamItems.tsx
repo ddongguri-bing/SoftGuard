@@ -1,10 +1,14 @@
-import { eventStreamMockData } from "@/data/eventStreamMockData";
+import { eventStreamData } from "@/types/eventStreamDataItem";
 import EventStreamItem from "./EventStreamItem";
 
-export default function EventStreamItems() {
+interface EventStreamItemsProps {
+  items: eventStreamData[];
+}
+
+export default function EventStreamItems({ items }: EventStreamItemsProps) {
   return (
     <div className="flex flex-col gap-2.5">
-      {eventStreamMockData.map((data, idx) => (
+      {items.map((data, idx) => (
         <EventStreamItem data={data} key={idx} />
       ))}
     </div>

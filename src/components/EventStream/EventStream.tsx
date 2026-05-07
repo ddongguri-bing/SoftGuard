@@ -4,8 +4,11 @@ import SectionHeader from "../common/SectionHeader";
 import EventStreamItems from "./EventStreamItems";
 
 import ArrowForward from "@/assets/arrow-forward.svg";
+import { eventStreamMockData } from "@/data/eventStreamMockData";
 
 export default function EventStream() {
+  const items = eventStreamMockData.slice(0, 4);
+
   return (
     <section className="flex flex-1 flex-col gap-2.5">
       <SectionHeader
@@ -22,7 +25,7 @@ export default function EventStream() {
           </Link>
         }
       />
-      <EventStreamItems />
+      <EventStreamItems items={items} />
     </section>
   );
 }
