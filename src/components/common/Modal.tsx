@@ -1,8 +1,11 @@
 "use client";
 
 import { useEventStreamVideoModalStore } from "@/store/eventStreamVideoModalStore";
+import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
+
+import Close from "@/assets/white-close.svg";
 
 export default function Modal() {
   const [mounted, setMounted] = useState(false);
@@ -53,9 +56,9 @@ export default function Modal() {
         <button
           type="button"
           onClick={close}
-          className="absolute -top-10 right-0 text-white"
+          className="absolute -top-12 right-0 text-white"
         >
-          닫기
+          <Image src={Close} width={32} height={32} alt="모달 닫기" />
         </button>
         <video
           src={videoUrl}
