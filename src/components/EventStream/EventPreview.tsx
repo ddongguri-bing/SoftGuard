@@ -20,7 +20,7 @@ export default function EventPreview({ level, videoUrl }: EventPreviewProps) {
         onClick={() => openWith(videoUrl)}
         className={`bg-black-third h-15.75 w-27.5 rounded-[10px] border ${theme.previewBorder}`}
       >
-        <video src={videoUrl} muted></video>
+        <video src={videoUrl} muted />
       </button>
     </>
   );
