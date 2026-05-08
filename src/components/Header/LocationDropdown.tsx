@@ -16,7 +16,7 @@ export default function LocationDropdown() {
   const [selectedLocation, setSelectedLocation] = useState("위치 선택");
 
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
