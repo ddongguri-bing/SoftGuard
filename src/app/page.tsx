@@ -2,7 +2,6 @@ import AnalyticsDashboard from "@/components/AnalyticsDashboard/AnalyticsDashboa
 import DeviceStatus from "@/components/DeviceStatus/DeviceStatus";
 import EventStream from "@/components/EventStream/EventStream";
 import InsightPanel from "@/components/InsightPanel/InsightPanel";
-import ScenarioSelector from "@/components/ScenarioSelector/ScenarioSelector";
 import SituationPanel from "@/components/SituationPanel/SituationPanel";
 import VideoPanel from "@/components/VideoPanel/VideoPanel";
 
@@ -20,7 +19,6 @@ export default function Home() {
       </section>
       <section className="flex items-center gap-12.5">
         <DeviceStatus />
-        <ScenarioSelector />
       </section>
     </div>
   );
