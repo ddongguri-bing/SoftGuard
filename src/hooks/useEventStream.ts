@@ -3,7 +3,7 @@
 import { useEventStreamStore } from "@/store/eventStreamStore";
 import { useEffect } from "react";
 
-export function useEvnetStream(limit?: number) {
+export function useEventStream(limit?: number) {
   const items = useEventStreamStore((e) => e.items);
   const start = useEventStreamStore((e) => e.start);
 

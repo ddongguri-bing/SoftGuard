@@ -6,10 +6,10 @@ import SectionHeader from "../common/SectionHeader";
 import EventStreamItems from "./EventStreamItems";
 
 import ArrowForward from "@/assets/arrow-forward.svg";
-import { useEvnetStream } from "@/hooks/useEventStream";
+import { useEventStream } from "@/hooks/useEventStream";
 
 export default function EventStream() {
-  const items = useEvnetStream(4);
+  const items = useEventStream(4);
 
   return (
     <section className="flex min-h-105 flex-1 flex-col gap-2.5">

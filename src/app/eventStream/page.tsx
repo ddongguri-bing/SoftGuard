@@ -1,10 +1,10 @@
 "use client";
 
 import EventStreamItems from "@/components/EventStream/EventStreamItems";
-import { useEvnetStream } from "@/hooks/useEventStream";
+import { useEventStream } from "@/hooks/useEventStream";
 
 export default function page() {
-  const items = useEvnetStream();
+  const items = useEventStream();
 
   return (
     <section className="mb-12.5 flex flex-col gap-5">
