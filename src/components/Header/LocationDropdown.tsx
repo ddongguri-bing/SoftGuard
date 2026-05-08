@@ -13,7 +13,7 @@ import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 export default function LocationDropdown() {
-  const [selectedLocatoin, setSelectedLocation] = useState("위치 선택");
+  const [selectedLocation, setSelectedLocation] = useState("위치 선택");
 
   return (
     <DropdownMenu>
@@ -22,12 +22,12 @@ export default function LocationDropdown() {
           variant="ghost"
           className="bg-black-third text-body-small-bold! hover:bg-black-third active:bg-black-third aria-expanded:bg-black-third h-auto w-50 justify-between rounded-[8px] border-0 px-3.75 py-2"
         >
-          {selectedLocatoin}
+          {selectedLocation}
 
           <ChevronDown className="h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="bg-black-third text-white-first w-50">
+      <DropdownMenuContent className="bg-black-third text-white-first">
         <DropdownMenuGroup>
           {LOCATIONS.map((location) => (
             <DropdownMenuItem
