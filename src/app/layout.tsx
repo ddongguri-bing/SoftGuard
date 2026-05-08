@@ -1,3 +1,4 @@
+import Modal from "@/components/common/Modal";
 import Header from "@/components/Header/Header";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
@@ -40,6 +41,7 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col px-12.5">
         <Header />
+        <Modal />
         <div>{children}</div>
       </body>
     </html>
