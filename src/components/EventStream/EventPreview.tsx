@@ -18,7 +18,7 @@ export default function EventPreview({ level, videoUrl }: EventPreviewProps) {
       <button
         type="button"
         onClick={() => openWith(videoUrl)}
-        className={`bg-black-third h-15.75 w-27.5 rounded-[10px] border ${theme.previewBorder}`}
+        className={`bg-black-third h-15.75 w-27.5 rounded-[10px] border ${theme.previewBorder} overflow-hidden`}
       >
         <video src={videoUrl} muted />
       </button>
