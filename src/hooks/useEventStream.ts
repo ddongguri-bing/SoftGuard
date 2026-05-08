@@ -5,7 +5,9 @@ import { useEventStreamStore } from "@/store/eventStreamStore";
 import { useEffect, useRef } from "react";
 
 export function useEventStream(limit?: number) {
+  const sourceItems = useEventStreamStore((s) => s.sourceItems);
   const items = useEventStreamStore((s) => s.items);
+  const started = useEventStreamStore((s) => s.started);
 
   const setSourceItems = useEventStreamStore((s) => s.setSourceItems);
   const start = useEventStreamStore((s) => s.start);
@@ -14,12 +16,17 @@ export function useEventStream(limit?: number) {
   const initializedRef = useRef(false);
 
   useEffect(() => {
-    if (!initializedRef.current) return;
+    if (initializedRef.current) return;
     initializedRef.current = true;
 
     let cancelled = false;
 
     const init = async () => {
+      if (sourceItems.length > 0) {
+        if (!started) start();
+        return;
+      }
+
       try {
         const list = await getEventStreamList();
         console.log("[eventStream] before setSourceItems:", list);
@@ -29,7 +36,7 @@ export function useEventStream(limit?: number) {
         setSourceItems(list);
         start();
       } catch {
-        ("이벤트 스트림 데이터 호출 실패");
+        console.error("이벤트 스트림 데이터 호출 실패");
       }
     };
 
@@ -37,8 +44,8 @@ export function useEventStream(limit?: number) {
 
     return () => {
       cancelled = true;
-      stop();
-      initializedRef.current = false;
+      // stop();
+      // initializedRef.current = false;
     };
   }, [setSourceItems, start, stop]);
 
