@@ -37,7 +37,7 @@ export default function EventStreamItem({ data }: EventStreamItemProps) {
           <EventDetailText data={data} />
         </div>
       </div>
-      <EventPreview level={data.level} />
+      <EventPreview level={data.level} videoUrl={data.videoUrl} />
     </div>
   );
 }
