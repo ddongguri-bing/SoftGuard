@@ -1,8 +1,8 @@
 import { eventStreamData } from "@/types/eventStreamDataItem";
+import { getApiBaseUrl } from "./apiBaseUrl";
 
 export const getEventStreamList = async () => {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL;
-  if (!baseUrl) throw new Error(`NEXT_PUBLIC_API_URL 확인 불가`);
+  const baseUrl = getApiBaseUrl();
 
   const response = await fetch(`${baseUrl}/api/events/stream`, {
     method: "GET",
