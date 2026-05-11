@@ -1,4 +1,4 @@
-import { getAnalyticsStats } from "@/api/analyticsStats";
+import { getAnalyticsStats } from "@/api/analytics";
 import StatCard from "./StatCard";
 
 export default async function StatsRow() {
