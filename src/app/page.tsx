@@ -1,5 +1,4 @@
 import AnalyticsDashboard from "@/components/AnalyticsDashboard/AnalyticsDashboard";
-import DeviceStatus from "@/components/DeviceStatus/DeviceStatus";
 import EventStream from "@/components/EventStream/EventStream";
 import InsightPanel from "@/components/InsightPanel/InsightPanel";
 import SituationPanel from "@/components/SituationPanel/SituationPanel";
@@ -16,9 +15,6 @@ export default function Home() {
       <section className="flex gap-12.5">
         <InsightPanel />
         <AnalyticsDashboard />
-      </section>
-      <section className="flex items-center gap-12.5">
-        <DeviceStatus />
       </section>
     </div>
   );
