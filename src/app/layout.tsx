@@ -37,6 +37,7 @@ export default function RootLayout({
         geistMono.variable,
         "font-sans",
         inter.variable,
+        "[-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
       )}
     >
       <body className="flex min-h-full flex-col px-12.5">
