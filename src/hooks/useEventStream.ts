@@ -44,8 +44,6 @@ export function useEventStream(limit?: number) {
 
     return () => {
       cancelled = true;
-      // stop();
-      // initializedRef.current = false;
     };
   }, [setSourceItems, start, stop]);
 
