@@ -31,6 +31,7 @@ export default function SituationPanel() {
           object2={liveRiskLevel !== "normal" ? object2 : undefined}
           size="medium"
           danger={liveRiskLevel === "danger"}
+          layoutMode="pairOrPlaceholder"
         />
       </InfoItem>
       <DivideLine />

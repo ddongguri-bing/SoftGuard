@@ -31,6 +31,7 @@ export default function EventStreamItem({ data }: EventStreamItemProps) {
                 object1={data.object1}
                 object2={data.object2}
                 size="small"
+                layoutMode="pairOrSingle"
               />
             )}
           </div>
