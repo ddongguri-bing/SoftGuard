@@ -1,7 +1,7 @@
-import Image from "next/image";
 import DangerIcon from "@/assets/danger-icon.svg";
-import WarningIcon from "@/assets/warning-icon.svg";
 import NormalIcon from "@/assets/normal-icon.svg";
+import WarningIcon from "@/assets/warning-icon.svg";
+import Image from "next/image";
 
 interface RiskLevelProps {
   level: "danger" | "warning" | "normal";

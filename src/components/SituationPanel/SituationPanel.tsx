@@ -20,7 +20,7 @@ export default function SituationPanel() {
   const pmCount = useScenarioVideoStore((s) => s.pmCount);
 
   return (
-    <section className="flex items-center justify-between">
+    <section className="mx-12.5 flex items-center justify-between">
       <InfoItem title="현재 위험 단계">
         <RiskLevel level={liveRiskLevel} />
       </InfoItem>
