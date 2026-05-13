@@ -5,16 +5,29 @@ interface EventDetailTextProps {
 }
 
 export default function EventDetailText({ data }: EventDetailTextProps) {
-  const hasTrafficCounts =
-    data.vehicle_count != null && data.pedestrian_count != null;
+  if (data.level === "normal") {
+    return (
+      <div className="text-body-small text-white-third">{data.location}</div>
+    );
+  }
+  const counts: string[] = [];
 
-  const hasAction = data.action != null;
+  if ((data.vehicleCount ?? 0) > 0) counts.push(`차량 ${data.vehicleCount}`);
+  if ((data.pedestrianCount ?? 0) > 0)
+    counts.push(`보행자 ${data.pedestrianCount}`);
+  if ((data.pmCount ?? 0) > 0) counts.push(`PM ${data.pmCount}`);
 
-  const detailText = hasTrafficCounts
-    ? `${data.location} | 차량 ${data.vehicle_count}, 보행자 ${data.pedestrian_count} | ${data.action}`
-    : hasAction
-      ? `${data.location} | ${data.action}`
-      : `${data.location}`;
+  const parts: string[] = [data.location];
+
+  if (counts.length > 0) {
+    parts.push(counts.join(" "));
+  }
+
+  if (data.action?.trim()) {
+    parts.push(data.action);
+  }
+
+  const detailText = parts.join(" | ");
 
   return <div className="text-body-small text-white-third">{detailText}</div>;
 }
