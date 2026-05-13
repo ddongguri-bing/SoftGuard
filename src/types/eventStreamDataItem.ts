@@ -12,4 +12,5 @@ export interface eventStreamData {
   pedestrian_count?: number;
   action: string;
   videoUrl: string;
+  thumbnailUrl: string;
 }
