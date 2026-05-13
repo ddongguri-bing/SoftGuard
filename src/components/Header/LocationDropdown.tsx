@@ -20,7 +20,7 @@ export default function LocationDropdown() {
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
-          className="bg-black-third text-body-small-bold! hover:bg-black-third active:bg-black-third aria-expanded:bg-black-third h-auto w-50 justify-between rounded-[8px] border-0 px-3.75 py-2"
+          className="bg-black-third text-body-small-bold! hover:bg-black-third active:bg-black-third aria-expanded:bg-black-third h-auto w-60 justify-between rounded-[8px] border-0 px-3.75 py-2"
         >
           {selectedLocation}
 
