@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { LOCATIONS } from "@/data/mockLocationMap";
+import { LOCATIONS } from "@/data/locationMap";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 
