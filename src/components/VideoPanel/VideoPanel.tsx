@@ -5,6 +5,7 @@ import Image, { StaticImageData } from "next/image";
 import Close from "@/assets/close-icon.svg";
 import Arrow from "@/assets/right-arrow.svg";
 import { useScenarioVideoStore } from "@/store/scenarioVideoStore";
+import { useEffect, useRef } from "react";
 
 type markerItemType =
   | { label: string; type: "dot"; colorClass: string }
@@ -22,8 +23,37 @@ export default function VideoPanel() {
   // TODO: 추후 4분할 시 사용
   const selectedLocation = useScenarioVideoStore((s) => s.selectedLocation);
   const panelVideoSrc = useScenarioVideoStore((s) => s.panelVideoSrc);
+  const applyVideoTick = useScenarioVideoStore((s) => s.applyVideoTick);
 
   const isQuadView = selectedLocation === "위치 선택";
+
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const prevTimeRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    prevTimeRef.current = null;
+  }, [panelVideoSrc]);
+
+  useEffect(() => {
+    if (isQuadView || !panelVideoSrc) return;
+    const el = videoRef.current;
+    if (!el) return;
+    const tick = () => {
+      const d = el.duration;
+      applyVideoTick(
+        el.currentTime,
+        prevTimeRef.current,
+        Number.isFinite(d) && d > 0.01 ? d : 0,
+      );
+      prevTimeRef.current = el.currentTime;
+    };
+    el.addEventListener("timeupdate", tick);
+    el.addEventListener("seeked", tick);
+    return () => {
+      el.removeEventListener("timeupdate", tick);
+      el.removeEventListener("seeked", tick);
+    };
+  }, [isQuadView, panelVideoSrc, applyVideoTick]);
 
   return (
     <section className="bg-black-third relative flex-1 rounded-[10px]">
@@ -32,6 +62,7 @@ export default function VideoPanel() {
       ) : (
         panelVideoSrc && (
           <video
+            ref={videoRef}
             key={panelVideoSrc}
             src={panelVideoSrc}
             className="h-full w-full rounded-[10px] object-cover"
