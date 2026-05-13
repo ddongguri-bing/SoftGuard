@@ -7,7 +7,6 @@ export default async function StatsRow() {
   const stats = [
     { title: "Near-miss 누적(오늘)", count: data.nearMissToday },
     { title: "DANGER 단계 비율", percentage: data.dangerRatio },
-    { title: "실제 사고 전환 확률", percentage: 28.6 },
     { title: "야간(18~22시) 비율", percentage: data.nightRatio },
   ];
 

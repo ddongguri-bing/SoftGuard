@@ -33,17 +33,6 @@ export default async function InsightPanel() {
       >
         {data.suggestion || "아직 요약 기반 제안된 내용이 없습니다."}
       </InsightCard>
-      <div className="flex flex-col gap-1.25">
-        <div className="text-body-xsmall-bold text-theme-light">
-          유사 사고 데이터 기반 분석
-        </div>
-        <div className="text-body-small-bold flex gap-1.25">
-          <div>이 유형의 실제 사고 전환 확률:</div>
-          <div className="text-warning">
-            {data.conversionProbability || 0}% (상위 {data.percentile || 0}%)
-          </div>
-        </div>
-      </div>
     </section>
   );
 }
