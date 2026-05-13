@@ -25,8 +25,14 @@ export const SCENARIO_LOCATION_TO_VIDEO: Record<string, string> = {
   [LOCATIONS[2]]: "/video/scenario3.mp4",
 };
 
-export const DEFAULT_PANEL_VIDEO_SRC = "/video/senario1.mp4";
-
 export function videoSrcForLocationLabel(label: string): string {
-  return SCENARIO_LOCATION_TO_VIDEO[label] ?? DEFAULT_PANEL_VIDEO_SRC;
+  return SCENARIO_LOCATION_TO_VIDEO[label] ?? null;
 }
+
+// TODO : 4분할 미리보기용 (필요에 맞게 순서/반복 조정)
+export const QUAD_PANEL_VIDEO_SRCS: string[] = [
+  "/video/scenario1.mp4",
+  "/video/scenario2.mp4",
+  "/video/scenario3.mp4",
+  "/video/scenario1.mp4",
+];

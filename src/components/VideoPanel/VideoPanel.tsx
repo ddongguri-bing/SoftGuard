@@ -19,19 +19,29 @@ const MARKER_ITEMS: markerItemType[] = [
 ];
 
 export default function VideoPanel() {
+  // TODO: 추후 4분할 시 사용
+  const selectedLocation = useScenarioVideoStore((s) => s.selectedLocation);
   const panelVideoSrc = useScenarioVideoStore((s) => s.panelVideoSrc);
+
+  const isQuadView = selectedLocation === "위치 선택";
 
   return (
     <section className="bg-black-third relative flex-1 rounded-[10px]">
-      <video
-        key={panelVideoSrc}
-        src={panelVideoSrc}
-        className="h-full w-full rounded-[10px] object-cover"
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
+      {isQuadView ? (
+        <div></div>
+      ) : (
+        panelVideoSrc && (
+          <video
+            key={panelVideoSrc}
+            src={panelVideoSrc}
+            className="h-full w-full rounded-[10px] object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        )
+      )}
       <div className="bg-black-second/70 absolute bottom-0 flex h-12.5 w-full gap-3.75 rounded-b-[10px] px-7.5">
         {MARKER_ITEMS.map((item) => (
           <div

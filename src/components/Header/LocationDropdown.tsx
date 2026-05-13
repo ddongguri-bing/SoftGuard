@@ -21,7 +21,7 @@ export default function LocationDropdown() {
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
-          className="bg-black-third text-body-small-bold! hover:bg-black-third active:bg-black-third aria-expanded:bg-black-third h-auto w-60 justify-between rounded-[8px] border-0 px-3.75 py-2"
+          className="bg-black-third text-body-small-bold! hover:bg-black-third active:bg-black-third aria-expanded:bg-black-third h-auto w-70 justify-between rounded-[8px] border-0 px-3.75 py-2"
         >
           {selectedLocation}
 
@@ -30,6 +30,12 @@ export default function LocationDropdown() {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="bg-black-third text-white-first">
         <DropdownMenuGroup>
+          <DropdownMenuItem
+            onSelect={() => selectLocation("위치 선택")}
+            className="text-body-xsmall! hover:bg-white-third!"
+          >
+            위치 선택
+          </DropdownMenuItem>
           {LOCATIONS.map((location) => (
             <DropdownMenuItem
               key={location}
