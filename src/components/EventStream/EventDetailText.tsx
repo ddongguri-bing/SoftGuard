@@ -5,6 +5,10 @@ interface EventDetailTextProps {
 }
 
 export default function EventDetailText({ data }: EventDetailTextProps) {
+  const locationWords = data.location.trim().split(/\s+/);
+  const displayLocation =
+    locationWords.length > 2 ? locationWords.slice(2).join(" ") : data.location;
+
   if (data.level === "normal") {
     return (
       <div className="text-body-small text-white-third">{data.location}</div>
@@ -17,7 +21,7 @@ export default function EventDetailText({ data }: EventDetailTextProps) {
     counts.push(`보행자 ${data.pedestrianCount}`);
   if ((data.pmCount ?? 0) > 0) counts.push(`PM ${data.pmCount}`);
 
-  const parts: string[] = [data.location];
+  const parts: string[] = [displayLocation];
 
   if (counts.length > 0) {
     parts.push(counts.join(" "));
