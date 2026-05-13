@@ -18,3 +18,15 @@ export const LOCATIONS = [
   "강남구 역삼동 역삼역·영동전화국 교차로",
   "동작구 사당동 이수 교차로",
 ];
+
+export const SCENARIO_LOCATION_TO_VIDEO: Record<string, string> = {
+  [LOCATIONS[0]]: "/video/scenario1.mp4",
+  [LOCATIONS[1]]: "/video/scenario2.mp4",
+  [LOCATIONS[2]]: "/video/scenario3.mp4",
+};
+
+export const DEFAULT_PANEL_VIDEO_SRC = "/video/senario1.mp4";
+
+export function videoSrcForLocationLabel(label: string): string {
+  return SCENARIO_LOCATION_TO_VIDEO[label] ?? DEFAULT_PANEL_VIDEO_SRC;
+}

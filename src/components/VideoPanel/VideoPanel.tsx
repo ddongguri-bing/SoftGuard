@@ -1,7 +1,10 @@
+"use client";
+
 import Image, { StaticImageData } from "next/image";
 
 import Close from "@/assets/close-icon.svg";
 import Arrow from "@/assets/right-arrow.svg";
+import { useScenarioVideoStore } from "@/store/scenarioVideoStore";
 
 type markerItemType =
   | { label: string; type: "dot"; colorClass: string }
@@ -16,9 +19,20 @@ const MARKER_ITEMS: markerItemType[] = [
 ];
 
 export default function VideoPanel() {
+  const panelVideoSrc = useScenarioVideoStore((s) => s.panelVideoSrc);
+
   return (
     <section className="bg-black-third relative flex-1 rounded-[10px]">
-      <div className="bg-black-second/50 absolute bottom-0 flex h-12.5 w-full gap-3.75 rounded-b-[10px] px-7.5">
+      <video
+        key={panelVideoSrc}
+        src={panelVideoSrc}
+        className="h-full w-full rounded-[10px] object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+      <div className="bg-black-second/70 absolute bottom-0 flex h-12.5 w-full gap-3.75 rounded-b-[10px] px-7.5">
         {MARKER_ITEMS.map((item) => (
           <div
             key={`${item.type}-${item.label}`}

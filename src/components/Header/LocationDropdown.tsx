@@ -9,11 +9,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { LOCATIONS } from "@/data/locationMap";
+import { useScenarioVideoStore } from "@/store/scenarioVideoStore";
 import { ChevronDown } from "lucide-react";
-import { useState } from "react";
 
 export default function LocationDropdown() {
-  const [selectedLocation, setSelectedLocation] = useState("위치 선택");
+  const selectLocation = useScenarioVideoStore((s) => s.selectLocation);
+  const selectedLocation = useScenarioVideoStore((s) => s.selectedLocation);
 
   return (
     <DropdownMenu modal={false}>
@@ -32,7 +33,7 @@ export default function LocationDropdown() {
           {LOCATIONS.map((location) => (
             <DropdownMenuItem
               key={location}
-              onSelect={() => setSelectedLocation(location)}
+              onSelect={() => selectLocation(location)}
               className="text-body-xsmall! hover:bg-white-third!"
             >
               {location}
