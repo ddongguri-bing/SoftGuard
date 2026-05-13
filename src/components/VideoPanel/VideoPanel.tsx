@@ -4,6 +4,7 @@ import Image, { StaticImageData } from "next/image";
 
 import Close from "@/assets/close-icon.svg";
 import Arrow from "@/assets/right-arrow.svg";
+import { QUAD_PANEL_VIDEO_SRCS } from "@/data/locationMap";
 import { useScenarioVideoStore } from "@/store/scenarioVideoStore";
 import { useEffect, useRef } from "react";
 
@@ -58,36 +59,57 @@ export default function VideoPanel() {
   return (
     <section className="bg-black-third relative flex-1 rounded-[10px]">
       {isQuadView ? (
-        <div></div>
+        <div className="grid h-full min-h-60 w-full grid-cols-2 grid-rows-2 gap-1 overflow-hidden rounded-[10px]">
+          {QUAD_PANEL_VIDEO_SRCS.map((src) => (
+            <video
+              key={src}
+              src={src}
+              className="h-full min-h-0 w-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+          ))}
+        </div>
       ) : (
         panelVideoSrc && (
-          <video
-            ref={videoRef}
-            key={panelVideoSrc}
-            src={panelVideoSrc}
-            className="h-full w-full rounded-[10px] object-cover"
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
+          <>
+            <video
+              ref={videoRef}
+              key={panelVideoSrc}
+              src={panelVideoSrc}
+              className="h-full w-full rounded-[10px] object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+            <div className="bg-black-second/70 absolute bottom-0 flex h-12.5 w-full gap-3.75 rounded-b-[10px] px-7.5">
+              {MARKER_ITEMS.map((item) => (
+                <div
+                  key={`${item.type}-${item.label}`}
+                  className="flex items-center gap-1.25"
+                >
+                  {item.type === "dot" ? (
+                    <div
+                      className={`${item.colorClass} h-4 w-4 rounded-full`}
+                    />
+                  ) : (
+                    <Image
+                      src={item.icon}
+                      width={16}
+                      height={16}
+                      alt={item.alt}
+                    />
+                  )}
+                  <div className="text-body-xsmall">{item.label}</div>
+                </div>
+              ))}
+            </div>
+          </>
         )
       )}
-      <div className="bg-black-second/70 absolute bottom-0 flex h-12.5 w-full gap-3.75 rounded-b-[10px] px-7.5">
-        {MARKER_ITEMS.map((item) => (
-          <div
-            key={`${item.type}-${item.label}`}
-            className="flex items-center gap-1.25"
-          >
-            {item.type === "dot" ? (
-              <div className={`${item.colorClass} h-4 w-4 rounded-full`} />
-            ) : (
-              <Image src={item.icon} width={16} height={16} alt={item.alt} />
-            )}
-            <div className="text-body-xsmall">{item.label}</div>
-          </div>
-        ))}
-      </div>
     </section>
   );
 }

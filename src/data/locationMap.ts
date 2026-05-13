@@ -29,10 +29,9 @@ export function videoSrcForLocationLabel(label: string): string {
   return SCENARIO_LOCATION_TO_VIDEO[label] ?? null;
 }
 
-// TODO : 4분할 미리보기용 (필요에 맞게 순서/반복 조정)
 export const QUAD_PANEL_VIDEO_SRCS: string[] = [
-  "/video/scenario1.mp4",
-  "/video/scenario2.mp4",
-  "/video/scenario3.mp4",
-  "/video/scenario1.mp4",
+  "/video/cctv1.mp4",
+  "/video/cctv2.mp4",
+  "/video/cctv3.mp4",
+  "/video/cctv4.mp4",
 ];
