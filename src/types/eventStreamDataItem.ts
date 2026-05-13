@@ -8,8 +8,9 @@ export interface eventStreamData {
   object2?: string;
   state?: string;
   location: string;
-  vehicle_count?: number;
-  pedestrian_count?: number;
+  vehicleCount?: number;
+  pedestrianCount?: number;
+  pmCount?: number;
   action: string;
   videoUrl: string;
   thumbnailUrl: string;
