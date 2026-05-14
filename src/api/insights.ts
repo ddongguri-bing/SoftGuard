@@ -13,5 +13,7 @@ export const getInsights = async () => {
 
   const data = (await response.json()) as insightData;
 
+  console.log("인사이트 : ", data);
+
   return data;
 };
