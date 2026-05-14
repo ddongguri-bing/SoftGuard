@@ -8,6 +8,16 @@ import InsightCard from "./InsightCard";
 export default async function InsightPanel() {
   const data = await getInsights();
 
+  const summary =
+    data.summary === "요약 생성 실패"
+      ? "분석할 Near-miss 및 사고가 발생하지 않았습니다."
+      : data.summary;
+
+  const suggestion =
+    data.suggestion === "운영 제안 생성 실패"
+      ? "분석할 Near-miss 및 사고가 발생하지 않았습니다."
+      : data.suggestion;
+
   return (
     <section className="flex flex-4 flex-col gap-2.5">
       <SectionHeader
@@ -23,7 +33,7 @@ export default async function InsightPanel() {
           </div>
         }
       >
-        {data.summary}
+        {summary}
       </InsightCard>
       <InsightCard
         icon={
@@ -31,7 +41,7 @@ export default async function InsightPanel() {
         }
         title="운영 제안"
       >
-        {data.suggestion || "아직 요약 기반 제안된 내용이 없습니다."}
+        {suggestion}
       </InsightCard>
     </section>
   );
